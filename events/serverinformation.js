@@ -51,7 +51,7 @@ Invite Link: N/A
 The Botxperts Bot is designed for everyone interested in hosting sessions. While this is a free version, a premium version is also available for those seeking additional features.
 
 Invite Link: [Invite Here](https://discord.com/oauth2/authorize?client_id=1296922710269759500&permissions=2147485696&integration_type=0&scope=bot)`)
-                    .setColor('#aed191');
+                    .setColor(`#2F3136`);
             }
 
             // Send the selected embed
