@@ -40,9 +40,17 @@ Thank you for your interest in becoming a part of BotXperts!
 
 `)
                     .setColor(`#2F3136`);
-            } else if (selectedValue === 'notused') {
+            } else if (selectedValue === 'bi') {
                 embed = new EmbedBuilder()
-                    .setDescription(`notusedlil bro`)
+                    .setTitle(`Bot Information`)
+                    .setDescription(`### Botxperts Utility
+The Botxperts Utility Bot is designed to enhance our server's experience by providing essential information, managing tickets, and much more. Developed by the dedicated Botxperts team and crafted with care by friends online, this bot aims to streamline various server functionalities.
+Invite Link: N/A
+
+### Botxperts Session Hosting Bot
+The Botxperts Bot is designed for everyone interested in hosting sessions. While this is a free version, a premium version is also available for those seeking additional features.
+
+Invite Link: [Invite Here](https://discord.com/oauth2/authorize?client_id=1296922710269759500&permissions=2147485696&integration_type=0&scope=bot)`)
                     .setColor('#aed191');
             }
 
