@@ -65,6 +65,11 @@ module.exports = {
                     description: 'The offical discord server invite',
                     value: 'sil',
                 },
+{
+                    label: 'Bot Information',
+                    description: 'Information for the server bots.',
+                    value: 'bi',
+                },
                 {
                     label: 'How to get hired.',
                     description: 'How to get hired.',
