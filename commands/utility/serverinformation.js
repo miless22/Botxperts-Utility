@@ -19,7 +19,7 @@ module.exports = {
         // Define each embed with detailed rules
         const embeds = [
             new EmbedBuilder()
-                .setTitle('Server Regulations')
+                .setTitle('<:Rules:1297076965462904895> Server Regulations <:Rules:1297076965462904895> ')
                 .setColor('#2F3136')
                 .setDescription('Listed below are all the regulations of the server. If you have any questions or concerns, please contact the staff team.'),
 
