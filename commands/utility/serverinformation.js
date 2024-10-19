@@ -3,7 +3,7 @@ const { SlashCommandBuilder, EmbedBuilder, ActionRowBuilder, StringSelectMenuBui
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('serverinformation')
-        .setDefaultMemberPermissions(0)
+        .setDefaultMemberPermissions(0)  // Makes the command admin-only
         .setDescription('Displays the server rules and information'),
     async execute(interaction) {
         // Acknowledge the interaction immediately
@@ -20,34 +20,33 @@ module.exports = {
         const embeds = [
             new EmbedBuilder()
                 .setTitle('Server Regulations')
-                .setColor(`#2F3136`)
-                .setDescription(`Listed below are all the regulations of the server. If you have any questions or concerns, please contact the staff team.`),
+                .setColor('#2F3136')
+                .setDescription('Listed below are all the regulations of the server. If you have any questions or concerns, please contact the staff team.'),
 
             new EmbedBuilder()
                 .setTitle('Rule 1: Respect Everyone')
-                .setColor(`#2F3136`)
-                .setDescription(`Respect is the foundation of our community. Every member deserves to be treated with dignity and consideration, regardless of their background or opinions. Harassment, hate speech, or bullying will not be tolerated. We encourage open dialogue and differing viewpoints, but it’s essential to express disagreements respectfully.`),
+                .setColor('#2F3136')
+                .setDescription('Respect is the foundation of our community. Harassment, hate speech, or bullying will not be tolerated.'),
 
             new EmbedBuilder()
                 .setTitle('Rule 2: Age Requirement')
-                .setColor(`#2F3136`)
-                .setDescription(`Members must be at least 13 years old to participate in the server. Any member found to be under the age requirement will be banned and may appeal their ban upon reaching the age requirement.`),
+                .setColor('#2F3136')
+                .setDescription('Members must be at least 13 years old to participate in the server. Members under this age will be banned.'),
 
             new EmbedBuilder()
                 .setTitle('Rule 3: No Spamming')
-                .setColor(`#2F3136`)
-                .setDescription(`Maintaining a clean and organized communication environment is essential for fostering meaningful interactions. Members are expected to refrain from sending repetitive messages that do not contribute value to the discussion.`),
+                .setColor('#2F3136')
+                .setDescription('Members are expected to refrain from sending repetitive messages that do not contribute to the discussion.'),
 
             new EmbedBuilder()
                 .setTitle('Rule 4: No Advertising')
-                .setColor(`#2F3136`)
-                .setDescription(`To maintain a focused environment, we prohibit all forms of advertising without explicit permission from the staff team. Unsolicited advertising can create distractions and undermine our community.`),
+                .setColor('#2F3136')
+                .setDescription('All forms of advertising without permission from staff are prohibited.'),
 
             new EmbedBuilder()
                 .setTitle('Rule 5: Privacy Matters')
-                .setColor(`#2F3136`)
-                .setDescription(`Respecting the privacy of all members is paramount. Safeguard your own privacy and do not share personal information without consent. Report any privacy violations to staff immediately.`),
-
+                .setColor('#2F3136')
+                .setDescription('Respect the privacy of all members. Do not share personal information without consent.')
         ];
 
         // Create the select menu
@@ -57,22 +56,22 @@ module.exports = {
             .addOptions([
                 {
                     label: 'Server Website',
-                    description: 'The offical BotXperts website',
+                    description: 'The official BotXperts website',
                     value: 'sw',
                 },
                 {
                     label: 'Server Invite Link',
-                    description: 'The offical discord server invite',
+                    description: 'The official Discord server invite',
                     value: 'sil',
                 },
-{
+                {
                     label: 'Bot Information',
-                    description: 'Information for the server bots.',
+                    description: 'Information about the server bots.',
                     value: 'bi',
                 },
                 {
-                    label: 'How to get hired.',
-                    description: 'How to get hired.',
+                    label: 'How to get hired',
+                    description: 'Steps to apply for a position at BotXperts.',
                     value: 'htgh',
                 }
             ]);
@@ -81,7 +80,7 @@ module.exports = {
         const row = new ActionRowBuilder().addComponents(selectMenu);
 
         // Send all embeds and the select menu to the target channel
-        await targetChannel.send({embeds, components: [row] });
+        await targetChannel.send({ embeds, components: [row] });
 
         // Acknowledge the command
         await interaction.editReply({ content: 'Server rules have been sent to the channel.', ephemeral: true });
